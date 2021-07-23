@@ -1,0 +1,46 @@
+:host{
+    min-height: 100vh;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,247,255,1) 100%);
+    display: flex;
+    justify-content: center;
+    height:max-content;
+    margin: 180px 0px;
+    
+}
+
+.example-card {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,247,255,1) 100%);
+    border-style:none;
+    max-height: 500px;
+}
+.example-form {
+    background: rgb(244, 246, 246) ;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,247,255,1) 60%);
+    width:100%
+    
+
+}
+
+.exampe-full-width {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgb(94, 113, 155) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    max-height:max-content;
+    width:100%;
+}
+
+.alignButtonsCenter {
+    background: rgba(0,247,255,1) ;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,247,255,1) 100%);
+    display: flex;
+    justify-content: center;
+}
+
+.container-logo {
+    
+    display: flex;
+    border-style: hidden;
+    justify-content: center; 
+    opacity : 0.5;
+
+}
