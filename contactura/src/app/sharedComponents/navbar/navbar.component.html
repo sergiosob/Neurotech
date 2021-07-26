@@ -6,17 +6,24 @@
         </span>
       
         <!--menu para desktop-->
-        <span class="logo"><img src="../../../assets/img/logo_contactura.png"/></span>
+        <span class="logo"><img src="../../../assets/Images/logot.png"/></span>
       
-        <ul id="menu-desktop" class="main-nav">
+        <ul id="menu-desktop" class="main-nav" >
           <li>
-            <a routerLink="/lista-contatos" class="nav-links">Contatos</a>
+            <a routerLink="/form-contatos" class="nav-links">Cadastra Contatos</a>
           </li>
           <li>
-           *<a routerLink="/lista-usuarios" class="nav-links">Usuarios</a>
+            <a routerLink="/lista-contatos" class="nav-links">Consulta Contatos</a>
           </li>
           <li>
-            <a class="nav-links logout" (click)="logout()">Logout</a>
+            <a routerLink="/form-usuarios" class="nav-links" >Cadastra Usuarios</a>
+           </li>
+          <li>
+           <a routerLink="/lista-usuarios" class="nav-links" >Consulta Usuarios</a>
+          </li>
+          <li>
+            <a class="nav-links logout" (click)="logout()" >Logout</a>
           </li>
         </ul>
       </nav>
+      

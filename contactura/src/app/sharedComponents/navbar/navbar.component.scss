@@ -23,9 +23,10 @@
       
       .main-nav {
         list-style-type: none;
-        display: none;
+        //display:list-item;
       
         li {
+          
           text-align: center;
           margin: 15px auto;
         }
@@ -41,7 +42,8 @@
       }
       
       .logo {
-        margin-left: 100px;
+        margin-left: 50px;
+        margin-top:10px;
         
         img {
           width: 100px;
@@ -55,17 +57,18 @@
           display: flex;
           justify-content: space-between;
           padding-bottom: 0;
-          height: 60px;
+          height: 120px;
           align-items: center;
         }
       
         .main-nav {
           display: flex;
           margin-right: 30px;
-          flex-direction: row;
-          justify-content: flex-end;
+          flex-direction:row;
+          justify-content:baseline;
       
           li {
+           
             margin: 0;
           }
         }
@@ -75,6 +78,7 @@
         }
       
         .nav-links {
+          
           color: #000000;
           text-decoration: none;
         }
@@ -89,3 +93,4 @@
       .logout {
         cursor: pointer;
       }
+  

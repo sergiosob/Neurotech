@@ -14,12 +14,7 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required])
   });
 
-  //playAudio(){
-  //  let audio = new Audio();
-  //  audio.src = "../../../assets/audio/Vivaldi4seasons.mp3";
-  // audio.load();
-  // audio.play();
-  //}
+
  
   constructor(private router: Router) { }
 
@@ -28,10 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
+    
     if (this.loginForm.valid) {
       localStorage.setItem('token', 'fuctura');
-      this.router.navigate(['/lista-contatos']);
-   
+      this.router.navigate(['/lista-contatos']); 
     }
   }
 }

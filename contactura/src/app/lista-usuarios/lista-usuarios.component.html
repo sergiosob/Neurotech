@@ -1,1 +1,39 @@
-<p>lista-usuarios works!</p>
+  
+<app-navbar></app-navbar>
+<!--titulo da lista de contatos-->
+<section>
+  <div class="container_title">
+    <h1>USUARIOS</h1>
+  </div>
+</section>
+<!---Botao de adicionar contato-->
+<section>
+  <div class="container_buttons">
+    <button mat-raised-button color="primary">Primary</button>
+  </div>
+</section>
+<!--Tabela da lista de contatos-->
+<section>
+  <div>
+    <table>
+      <!--thead-->
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Username</th>
+          <th scope="col">Password</th>
+          <th scope="col">Admin</th>
+        </tr>
+      </thead>
+      <!--tbody-->
+      <tbody>
+        <tr *ngFor="let user of usersList">
+          <td data-label="Nome">{{user.name}}</td>
+          <td data-label="Username">{{user.username}}</td>
+          <td data-label="Password">{{user.password}}</td>
+          <td data-label="Admin">{{user.admin}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
