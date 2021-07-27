@@ -23,7 +23,7 @@
       
       .main-nav {
         list-style-type: none;
-        //display:list-item;
+        display: none;
       
         li {
           
@@ -50,7 +50,7 @@
         }
       }
       
-      // media query para desktop com o minimo de 769px
+    
       
       @media screen and (min-width: 769px) {
         .navbar {
@@ -65,7 +65,7 @@
           display: flex;
           margin-right: 30px;
           flex-direction:row;
-          justify-content:baseline;
+          justify-content:flex-end;
       
           li {
            

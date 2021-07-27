@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
  
   constructor(private router: Router) { }
 
-  ngOnInit() {
-    //this.playAudio();
+  ngOnInit(): void {
+    
   }
 
   login(){
