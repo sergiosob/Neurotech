@@ -1,45 +1,52 @@
-h1 {
-  text-align: center;
-  font-size: 30px;
-  font-family: verdana;
+.container_title{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.container_form {
+.grid-container {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: white;
-  padding: 10px;
+  grid-gap: 3.5em;
+  margin: 20px;
+
+  input{
+      width: 100%;
+  }
 }
 
-.nome_form {
-  margin-bottom: 15px;
-  text-align: left;
-  width: 100%
+.grid_container_email{
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 2.5em;
+  margin: 20px;
+
+  input{
+        width: 100%;
+  }
+  
 }
+@media screen and (max-width: 767px){
 
-.email_form {
-  text-align: left;
-  width: 100%
+  .grid-container{
+      display: grid;
+      grid-template-columns: auto;
+      grid-gap: 3.5em;
+      margin: 20px;
+
+      input{
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 767px){
+
+      .grid-container{
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 1.5m;
+        margin: 20px;
+      }
+    }
 }
-
-.phone_form {
-  text-align: left;
-  width: 100%
-}
-
-.admin_form {
-  text-align:left;
-  width: 100%
-}
-
-
-
-.container_buttons {
-  padding: 10px;
-}
-
-p {
-  font-family: arial;
-  margin: 0;
-}
+  
 

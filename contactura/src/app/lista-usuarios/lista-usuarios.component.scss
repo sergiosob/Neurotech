@@ -39,3 +39,9 @@
     letter-spacing: .1em;
     text-transform: uppercase;
   }
+
+  .container_buttons_table{
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }

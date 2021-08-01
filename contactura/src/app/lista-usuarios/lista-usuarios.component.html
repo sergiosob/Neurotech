@@ -3,7 +3,13 @@
 <!--titulo da lista de contatos-->
 <section>
   <div class="container_title">
-    <h1>Consultar Usuários</h1>
+    <h1>Usuários</h1>
+  </div>
+</section>
+<section>
+  <div CLASS="container_buttons">
+    <button routerlink="/cadastro-contato" mat-raised-button color="primary">Criar Contato</button>
+    <button routerlink="/cadastro-usuario" mat-raised-button color="primary">Criar Usuário</button>
   </div>
 </section>
 <section>
@@ -16,17 +22,31 @@
           <th scope="col">Username</th>
           <th scope="col">Password</th>
           <th scope="col">Admin</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <!--tbody-->
+   
       <tbody>
         <tr *ngFor="let user of usersList">
           <td data-label="Nome">{{user.name}}</td>
           <td data-label="Username">{{user.username}}</td>
           <td data-label="Password">{{user.password}}</td>
           <td data-label="Admin">{{user.admin}}</td>
+          <th scope="col"></th>
+        <td>
+            <div class="container_buttons_table">
+         
+              <mat-icon (click)="deleteUsuarios(user)">delete</mat-icon>
+              
+              <mat-icon (click)="editUsuarios(user)">edit</mat-icon>
+              </div>
+            </td>       
         </tr>
       </tbody>
     </table>
   </div>
 </section>
+
+

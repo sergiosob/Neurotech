@@ -2,38 +2,31 @@
 
 <section>
   <div class="container_title">
-<strong><h1>Cadastrar Novo Contato</h1></strong>
+      <h1>FORMULÁRIO DE CONTATO</h1>
   </div>
 </section>
-
-
 <section>
-
-  <div class="container_form">
-
-    <div class="nome_form">
-      <p>Nome: </p>
-      <input type="text" size="75" />
+  <form [formGroup] = "formContatos">
+  <div class="grid-container">
+    <div>
+      <span>Nome: </span>
+      <input formControlName="name" type="text" name="nome">
     </div>
-
-    <div class="phone_form">
-      <p>Phone: </p>
-      <input type="text"  size="75"/>
+    <div >
+      <span>Telefone:</span>
+      <input formControlName="phone" type="text"  name="phone">
     </div>
-
-    <div class="email_form">
-      <br>
-      <p>Email: </p>
-      <input type="text" size="75"/>
     </div>
-
-
+    <div class="grid_container_email">
+      <div>
+      <span>Email: </span>
+      <input formControlName="email" type="email" name="email">
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="save()">Salvar Contato</button>
+    </div>
   </div>
+  </form>
 </section>
 
-<!--botao de salvar contatos-->
-<section>
-  <div class="container_buttons">
-    <button mat-raised-button color="primary">Salvar Contato</button>
-  </div>
-</section>
+

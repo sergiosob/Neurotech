@@ -18,11 +18,6 @@ import { NavbarComponent } from './SharedComponents/navbar/navbar.component';
  import {MatInputModule} from '@angular/material/input';
  import {MatIconModule} from '@angular/material/icon';
 
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
