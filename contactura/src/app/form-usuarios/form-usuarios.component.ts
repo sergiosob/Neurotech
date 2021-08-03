@@ -35,19 +35,21 @@ export class FormUsuariosComponent implements OnInit {
    }
 
    
-  save(){('form');
+  saveu(){('form');
     if (this.formUsuarios.valid){
       Swal.fire({
         icon:'success',
         title: 'Eeeeeba..',
-        text: 'Usuário criado com sucesso!'
+        text: 'Usuário criado com sucesso!',
+        timer: 3000
       });
       this.router.navigate(['/lista-usuarios']);
     }else{    
       Swal.fire({
       icon:'error',
       title: 'Oooops..',
-      text: 'Cadastro não realizado, preencha corretamente todos os campos'
+      text: 'Cadastro não realizado, preencha corretamente todos os campos',
+      timer: 3000
     });
    }
   }

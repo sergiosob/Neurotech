@@ -10,20 +10,20 @@
 
   <div class="container_form">
 
-    <div class="email_form">
-      <p>Email: </p>
-      <input type="text" id="" size="75" />
-    </div>
-
-    <div class="phone_form">
-      <p>Phone: </p>
-      <input type="text" id="" size="75"/>
-    </div>
-
     <div class="nome_form">
-      <br>
       <p>Nome: </p>
-      <input type="text" id="" size="75"/>
+      <input type="text" size="75" />
+    </div>
+
+    <div class="username_form">
+      <p>Username: </p>
+      <input type="text" size="75"/>
+    </div>
+
+    <div class="password_form">
+      <br>
+      <p>Password: </p>
+      <input type="text"  size="75"/>
     </div>
 
     <div class="admin_form">
@@ -38,6 +38,7 @@
 
 <section>
   <div class="container_buttons">
-    <button mat-raised-button color="primary">Salvar Usuário</button>
+    
+    <button mat-raised-button color="primary" (click)="saveu()">Salvar Usuario</button>
   </div>
 </section>

@@ -40,7 +40,7 @@ populateUsers() {
 editUsuarios(usuarios: User){
   console.log('edit esta funcionando', usuarios);
   this.UsuariosService.getUsersList(usuarios);
-  this.router.navigate(['/cadastro-usuarios']);
+  this.router.navigate(['cadastro-usuarios']);
 }
 
 deleteUsuarios(usuarios: User){

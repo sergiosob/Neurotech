@@ -34,19 +34,22 @@ export class FormContatosComponent implements OnInit {
    }
 
    
-  save(){('form');
+  savec(){('form');
     if (this.formContatos.valid){
       Swal.fire({
         icon:'success',
         title: 'Eeeeeba..',
-        text: 'Contato criado com sucesso!'
+        text: 'Contato criado com sucesso!',
+        timer: 3000
       });
+     
       this.router.navigate(['/lista-contatos']);
     }else{    
       Swal.fire({
       icon:'error',
       title: 'Oooops..',
-      text: 'Cadastro não realizado, preencha corretamente todos os campos'
+      text: 'Cadastro não realizado, preencha corretamente todos os campos',
+      timer: 3000
     });
    }
   }

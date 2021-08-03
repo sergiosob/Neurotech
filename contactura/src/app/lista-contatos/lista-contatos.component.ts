@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Contacts } from '../models/contacts';
 import { ContatosService } from '../service/contatos/contatos.service';
 
+
 @Component({
   selector: 'app-lista-contatos',
   templateUrl: './lista-contatos.component.html',
@@ -36,7 +37,7 @@ export class ListaContatosComponent implements OnInit {
     console.log(this.contactsList);
   }
 
-  editContatos(contatos: Contacts){
+  editContacts(contatos: Contacts){
     console.log('edit esta funcionando', contatos);
     this.contatosService.getContactsList(contatos);
     this.router.navigate(['/cadastro-contatos']);
@@ -59,6 +60,6 @@ export class ListaContatosComponent implements OnInit {
         );
       }
     }); 
-    
+
   }
 }

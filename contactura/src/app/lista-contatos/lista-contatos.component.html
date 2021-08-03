@@ -9,8 +9,8 @@
 
 <section>
   <div CLASS="container_buttons">
-    <button routerlink="/cadastro-contato" mat-raised-button color="primary">Criar Contato</button>
-    <button routerlink="/cadastro-usuario" mat-raised-button color="primary">Criar Usuário</button>
+    <a routerLink="/cadastro-contatos"><button  mat-raised-button color="primary">Criar Contato</button></a>
+    <a routerLink="/cadastro-usuarios"><button mat-raised-button color="primary">Criar Usuário</button></a>
   </div>
 </section>
 
@@ -40,7 +40,7 @@
          
               <mat-icon (click)="deleteContacts(contact)">delete</mat-icon>
               
-              <mat-icon (click)="editContatos(contact)">edit</mat-icon>
+              <mat-icon (click)="editContacts(contact)">edit</mat-icon>
               </div>
             </td>       
         </tr>
