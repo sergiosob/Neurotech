@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { User } from '../models/user';
 import { UsuariosService } from '../service/usuarios/usuarios.service';
 
 @Component({
@@ -40,7 +40,7 @@ populateUsers() {
 editUsuarios(usuarios: User){
   console.log('edit esta funcionando', usuarios);
   this.UsuariosService.getUsersList(usuarios);
-  this.router.navigate(['cadastro-usuarios']);
+  this.router.navigate(['/cadastro-usuarios']);
 }
 
 deleteUsuarios(usuarios: User){
