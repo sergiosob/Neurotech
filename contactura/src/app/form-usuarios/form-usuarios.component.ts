@@ -45,6 +45,7 @@ export class FormUsuariosComponent implements OnInit {
         text: 'Usuário criado com sucesso!',
         timer: 3000
       });
+      this.formUsuarios.reset;
       this.router.navigate(['/lista-usuarios']);
     }else{    
       Swal.fire({

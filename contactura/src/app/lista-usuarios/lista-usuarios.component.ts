@@ -16,7 +16,7 @@ export class ListaUsuariosComponent implements OnInit {
 //UsuariosService: any;
 //router: any;
 
-  constructor(public UsuariosService: UsuariosService, private router: Router) {}
+  constructor(public usuariosService: UsuariosService, private router: Router) {}
 
   ngOnInit(): void {
     this.populateUsers();
@@ -39,7 +39,7 @@ populateUsers() {
 
 editUsuarios(usuarios: User){
   console.log('edit esta funcionando', usuarios);
-  this.UsuariosService.getUsersList(usuarios);
+  this.usuariosService.getUsersList(usuarios);
   this.router.navigate(['/cadastro-usuarios']);
 }
 
@@ -48,6 +48,7 @@ deleteUsuarios(usuarios: User){
     icon: 'warning',
     title: 'Você tem certeza?',
     text:'Deseja mesmo deletar?',
+    timer: 3000,
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
@@ -55,6 +56,7 @@ deleteUsuarios(usuarios: User){
     cancelButtonText: 'Não'
   }).then((result) => {
     if (result.isConfirmed) {
+      timer: 3000
       Swal.fire(
         'Deletado com sucesso!',
       );

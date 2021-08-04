@@ -48,6 +48,7 @@ export class ListaContatosComponent implements OnInit {
       icon: 'warning',
       title: 'Você tem certeza?',
       text:'Deseja mesmo deletar?',
+      timer: 3000,
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
@@ -55,8 +56,11 @@ export class ListaContatosComponent implements OnInit {
       cancelButtonText: 'Não'
     }).then((result) => {
       if (result.isConfirmed) {
+        timer: 3000
         Swal.fire(
+          
           'Deletado com sucesso!',
+        
         );
       }
     }); 
