@@ -6,22 +6,24 @@
     <h1>Usuários</h1>
   </div>
 </section>
+
 <section>
   <div CLASS="container_buttons">
     <a routerLink="/cadastro-usuarios"><button mat-raised-button color="primary">Criar Usuário</button></a>
     <a routerLink="/cadastro-contatos"><button  mat-raised-button color="primary">Criar Contato</button></a>
-   
+    <br>
+    
   </div>
 </section>
+
 <section>
   <div>
     <table>
-      <!--thead-->
       <thead>
         <tr>
+          <th scope="col">Email</th>
           <th scope="col">Nome</th>
-          <th scope="col">Username</th>
-          <th scope="col">Password</th>
+          <th scope="col">Senha</th>
           <th scope="col">Admin</th>
           <th scope="col"></th>
           <th scope="col"></th>
@@ -31,11 +33,11 @@
    
       <tbody>
         <tr *ngFor="let user of usersList">
+          <td data-label="E-mail">{{user.email}}</td>
           <td data-label="Nome">{{user.name}}</td>
-          <td data-label="Username">{{user.username}}</td>
           <td data-label="Password">{{user.password}}</td>
           <td data-label="Admin">{{user.admin}}</td>
-          <th scope="col"></th>
+         <th scope="col"></th>
         <td>
             <div class="container_buttons_table">
          

@@ -23,13 +23,15 @@ export class FormContatosComponent implements OnInit {
   constructor(public contatosService: ContatosService, private router: Router) {}
 
   ngOnInit(): void {
-    this.formContatos.reset;
+    this.formContatos.reset();
     this.contatosService.botaoEdit.subscribe( edit => {
       if (edit !== null){
         console.log(edit, 'valor do edit');
         this.formContatos.get('name').setValue(edit.name);
         this.formContatos.get('phone').setValue(edit.phone);
         this.formContatos.get('email').setValue(edit.email);
+      }else{
+        this.formContatos.reset();
       }
     });
    }
@@ -43,7 +45,7 @@ export class FormContatosComponent implements OnInit {
         text: 'Contato criado com sucesso!',
         timer: 3000
       });
-      this.formContatos.reset;
+      this.formContatos.reset();
       this.router.navigate(['/lista-contatos']);
     }else{    
       Swal.fire({

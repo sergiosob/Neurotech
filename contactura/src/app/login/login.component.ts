@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -26,7 +25,7 @@ export class LoginComponent implements OnInit {
   login(){
     
     if (this.loginForm.valid) {
-      localStorage.setItem('token', 'fuctura');
+      localStorage.setItem('token', 'coxinhanovaiorkina');
       localStorage.setItem('admin', 'true');
       this.router.navigate(['/lista-contatos']); 
     }else{

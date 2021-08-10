@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { User } from '../models/user';
 import { UsuariosService } from '../service/usuarios/usuarios.service';
 
 @Component({
@@ -11,27 +10,30 @@ import { UsuariosService } from '../service/usuarios/usuarios.service';
   styleUrls: ['./form-usuarios.component.scss']
 })
 export class FormUsuariosComponent implements OnInit {
-  userlist: User[];
-  collection = { count: 10, data: [] };
+
   
   formUsuarios = new FormGroup({
+    id: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
     name: new FormControl('', [Validators.required]),
-    username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     admin: new FormControl('', [Validators.required])
   });
   
 
-  constructor(private router: Router, public usuariosService: UsuariosService) { }
+  constructor(public usuariosService: UsuariosService, private router: Router) {}
 
   ngOnInit(): void {
+    this.formUsuarios.reset();
     this.usuariosService.botaoEdit.subscribe( edit => {
       if (edit !== null){
         console.log(edit, 'valor do edit');
-        this.formUsuarios.get('name').setValue(edit.name);
-        this.formUsuarios.get('username').setValue(edit.username);
+        this.formUsuarios.get('email').setValue(edit.email);
+        this.formUsuarios.get('name').setValue(edit.name);     
         this.formUsuarios.get('password').setValue(edit.password);
         this.formUsuarios.get('admin').setValue(edit.admin);
+      }else{
+        this.formUsuarios.reset();
       }
     });
    }
@@ -45,7 +47,7 @@ export class FormUsuariosComponent implements OnInit {
         text: 'Usuário criado com sucesso!',
         timer: 3000
       });
-      this.formUsuarios.reset;
+      this.formUsuarios.reset();
       this.router.navigate(['/lista-usuarios']);
     }else{    
       Swal.fire({

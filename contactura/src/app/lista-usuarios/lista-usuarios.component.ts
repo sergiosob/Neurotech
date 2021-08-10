@@ -26,9 +26,10 @@ export class ListaUsuariosComponent implements OnInit {
 populateUsers() {
   for (let i = 0; i < this.collection.count; i++) {
     this.collection.data.push({
+      email: 'email' + i + '@contactura.com',
       name: 'nome' + i,
       username: 'username' + i,
-      password: 'password' + i,
+      password: 'senha' + i,
       admin: 'F'
     });
   }
@@ -37,13 +38,13 @@ populateUsers() {
   console.log(this.usersList);
 }
 
-editUsuarios(usuarios: User){
-  console.log('edit esta funcionando', usuarios);
-  this.usuariosService.getUsersList(usuarios);
+editUsuarios(user: User){
+  console.log('edit esta funcionando', user);
+  this.usuariosService.getUsersList(user);
   this.router.navigate(['/cadastro-usuarios']);
 }
 
-deleteUsuarios(usuarios: User){
+deleteUsuarios(user: User){
   Swal.fire({
     icon: 'warning',
     title: 'Você tem certeza?',
