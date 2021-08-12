@@ -18,6 +18,10 @@ export class NavbarComponent implements OnInit, OnChanges {
     this.putEventsMenu();
   }
 
+  ngOnDestroy(): void{
+    this.refresh();
+  }
+
   putEventsMenu() {
     const menuDesktop = document.getElementById('menu-desktop');
     const menuMobile = document.getElementById('menu-mobile');
@@ -25,6 +29,10 @@ export class NavbarComponent implements OnInit, OnChanges {
       menuDesktop.classList.toggle('active');
     });
   }
+
+  refresh() {
+    window.location.reload();
+   }
 
   logout() {
     localStorage.removeItem('token');
