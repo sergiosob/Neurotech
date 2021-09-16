@@ -1,8 +1,19 @@
-  
+
 export interface User {
-    id?:number;
-    email:string;
-    name:string;
+  id?: number;
+  name:string;
+  password:string;
+  admin: boolean;
+}
+
+  export interface Authentication {
+    username: string;
     password: string;
-    admin: boolean;
+    
+  }
+
+  export interface StorageInfo {
+    admin: string;
+    token: string;
+    
   }

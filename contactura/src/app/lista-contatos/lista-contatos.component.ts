@@ -13,17 +13,28 @@ import { ContatosService } from '../service/contatos/contatos.service';
 export class ListaContatosComponent implements OnInit {
 
   contactsList: Contacts[];
-  collection = { count: 10, data: [] };
+  //collection = { count: 10, data: [] };
 
   constructor(public contatosService: ContatosService, private router: Router) {}
 
   ngOnInit(): void {
-    this.populateContacts();
+    //this.populateContacts();
+    this.getContacts();
   }
 
-
-
-  populateContacts() {
+  getContacts(){
+    this.contatosService.getContacts().subscribe(
+      data => {
+        this.contactsList = data;
+        console.log(data);
+      },
+      error => {
+        this.contactsList = [];
+        console.log(error);
+      }
+    );
+  }
+  /*populateContacts() {
     for (let i = 0; i < this.collection.count; i++) {
       this.collection.data.push({
         id: i,
@@ -35,7 +46,7 @@ export class ListaContatosComponent implements OnInit {
 
     this.contactsList = this.collection.data;
     console.log(this.contactsList);
-  }
+  }*/
 
   editContacts(contatos: Contacts){
     console.log('edit esta funcionando', contatos);
@@ -56,14 +67,16 @@ export class ListaContatosComponent implements OnInit {
       cancelButtonText: 'Não'
     }).then((result) => {
       if (result.isConfirmed) {
-        timer: 3000
-        Swal.fire(
-          
-          'Deletado com sucesso!',
-        
-        );
-      }
-    }); 
+        this.contatosService.deleteContacts(contatos.id).subscribe(
+        data => {
+          Swal.fire(
+            String(data),
+          );
+          this.getContacts();
+        }
+      );
+    }
+  });
+}
 
-  }
 }

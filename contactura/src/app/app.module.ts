@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { ListaContatosComponent } from './lista-contatos/lista-contatos.component';
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { FormContatosComponent } from './form-contatos/form-contatos.component';
+import { HttpClientModule } from '@angular/common/http';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { NotFoundComponent } from './sharedComponents/not-found/not-found.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -38,7 +39,8 @@ import { NavbarComponent } from './SharedComponents/navbar/navbar.component';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
 
   providers: [],

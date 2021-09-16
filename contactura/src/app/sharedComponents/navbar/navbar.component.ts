@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit, OnChanges {
+export class NavbarComponent implements OnInit {
 
   constructor(private router: Router) {}
 
@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit, OnChanges {
   putEventsMenu() {
     const menuDesktop = document.getElementById('menu-desktop');
     const menuMobile = document.getElementById('menu-mobile');
-    menuMobile.addEventListener('click', function () {
+    menuMobile.addEventListener('click', function() {
       menuDesktop.classList.toggle('active');
     });
   }
@@ -35,7 +35,11 @@ export class NavbarComponent implements OnInit, OnChanges {
    }
 
   logout() {
+    localStorage.removeItem('admin');
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
     this.router.navigate(['/login']);
+    console.log("nao logado")
   }
 }

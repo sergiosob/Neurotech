@@ -12,18 +12,19 @@ import { UsuariosService } from '../service/usuarios/usuarios.service';
 export class ListaUsuariosComponent implements OnInit {
 
   usersList: User[];
-  collection = { count: 10, data: [] };
+ // collection = { count: 10, data: [] };
 //UsuariosService: any;
 //router: any;
 
-  constructor(public usuariosService: UsuariosService, private router: Router) {}
+  constructor(public usuariosService: UsuariosService, private router: Router) { }
 
   ngOnInit(): void {
-    this.populateUsers();
+    //this.populateUsers();
+    this.getUser();
   }
 //metodo para preencher os usuarios com dados mocados
 
-populateUsers() {
+/*populateUsers() {
   for (let i = 0; i < this.collection.count; i++) {
     this.collection.data.push({
       email: 'email' + i + '@contactura.com',
@@ -36,6 +37,18 @@ populateUsers() {
 
   this.usersList = this.collection.data;
   console.log(this.usersList);
+}*/
+getUser(){
+  this.usuariosService.getUser().subscribe(
+    userData => {
+      this.usersList = userData;
+      console.log(userData);
+    },
+    error => {
+      this.usersList = [];
+      console.log(error);
+    }
+  );
 }
 
 editUsuarios(user: User){
@@ -57,12 +70,16 @@ deleteUsuarios(user: User){
     cancelButtonText: 'Não'
   }).then((result) => {
     if (result.isConfirmed) {
-      timer: 3000
-      Swal.fire(
-        'Deletado com sucesso!',
-      );
-    }
-  }); 
-  
-}
+      this.usuariosService.deleteUser(user.id).subscribe(
+        data => {
+          Swal.fire(
+            String(data),
+          );
+          this.getUser();
+        }
+        );
+      }
+    });
+  }
+
 }
